@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Mathematical function</title>
+    <script>
+        // A mathematical function that takes (in the form of arguments) two numbers and the sign of the arithmetic operation (+, -, /, *).
+        // The function produces arithmetic calculation and returns the result to a variable.
+        
+        var num1 = prompt("Enter the first number", "");
+        var num2 = prompt("Enter the second number", "");
+        var operation = prompt("Enter the sign of arithmetic operation (+, -, *, /)", "");
+        var result = 0;
+
+        function calculate(a, b, sign) {
+            a = parseInt(num1);    // The parseInt function returns an integer value.
+            b = parseInt(num2);
+            sign = operation;
+            if (typeof (a) == 'number' && typeof (b) == 'number') {    // Typeof - returns the textual name of the data type.
+                switch (operation) {
+                    case "+": {
+                        result = a + b;
+                        if (isNaN(result)) {    // The isNaN() function determines whether a value is NaN or not.
+                            alert("The variable isn\'t a number.");
+                        }
+                        else {
+                            alert(a + " + " + b + " = " + result);
+                        }
+                        break;
+                    };
+                    case "-": {
+                        result = a - b;
+                        if (isNaN(result)) {
+                            alert("The variable isn\'t a number.");
+                        }
+                        else {
+                            alert(a + " - " + b + " = " + result);
+                        }
+                        break;
+                    };
+                    case "*": {
+                        result = a * b;
+                        if (isNaN(result)) {
+                            alert("The variable isn\'t a number.");
+                        }
+                        else {
+                            alert(a + " * " + b + " = " + result);
+                        }
+                        break;
+                    };
+                    case "/": {
+                        result = a / b;
+                        if (isNaN(result)) {
+                            alert("The variable isn\'t a number.");
+                        }
+                        else if (b != 0) {
+                            alert(a + " / " + b + " = " + result);
+                        }
+                        else {
+                            alert("Division by zero is prohibited!");
+                        }
+                        break;
+                    };
+                    default:
+                        alert("You entered the wrong operation sign.")
+                };
+            }
+            else {
+                alert("One or both variables aren\'t numbers.");
+            };
+        }
+
+        calculate();
+    </script>
+</head>
+<body>
+</body>
+</html>
